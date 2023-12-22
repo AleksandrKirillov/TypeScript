@@ -10,12 +10,12 @@ enum Numbers {
     MAX = 9007199254740992          // 9.007.199.254.740.992 (15)
 };
 
-var LESS_THAN_TWENTY: string[] = [
+const LESS_THAN_TWENTY: string[] = [
     'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
     'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
 ];
 
-var TENTHS_LESS_THAN_HUNDRED: string[] = [
+const TENTHS_LESS_THAN_HUNDRED: string[] = [
     'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
 ];
 
@@ -28,8 +28,8 @@ var TENTHS_LESS_THAN_HUNDRED: string[] = [
  * @returns {string}
  */
 function toWords(number: number, asOrdinal: boolean = false): string {
-    var words: string;
-    var num: number = number;
+    let words: string;
+    let num: number = number;
 
     if (!isFinite(num)) {
         throw new TypeError(
@@ -42,7 +42,7 @@ function toWords(number: number, asOrdinal: boolean = false): string {
 }
 
 function generateWords(number: number, text: string[] = ['']): string {
-    var remainder: number = 0, word: string = '',
+    let remainder: number = 0, word: string = '',
         words: string[] = text;
 
     // We’re done
